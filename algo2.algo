@@ -1,0 +1,33 @@
+var 
+    tab1?tab2?X: ARRAY_OF INTEGER;
+    s,i,j,k:INTEGER 
+ Begin
+    x=[]
+    s=0
+   FOR i FROM 0 TO tab1.length STEP 1  DO
+       k=0
+       FOR j FROM 0 TO tab2.length STEP 1  DO
+        if tab1[i]===tab2[j] then 
+        k++
+        endif
+        endfor
+        if(k===0)then
+            x.push(tab1[i])
+            s+=tab1[i]
+        endif
+    endfor
+    FOR i FROM 0 TO tab2.length STEP 1  DO
+       k=0
+       FOR j FROM 0 TO tab1.length STEP 1  DO
+        if (tab1[i]===  tab2[j]) then 
+        k++
+        endif
+        end_for
+        if(k===0)then
+            x.push(tab2[i])
+            s+=tab2[i]
+        endif
+    endfor
+    write('distinct numbers are:',x)
+    write('sum ofdistinct numbers is:',s)
+ End
